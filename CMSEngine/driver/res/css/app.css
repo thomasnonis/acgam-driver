@@ -1,0 +1,68 @@
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+}
+
+iframe {
+  border: 0;
+}
+
+input {
+  outline: none;
+}
+
+.button {
+  color: #fff;
+  background-color: #000;
+  border-color: #222;
+}
+.button:hover,
+.button:focus,
+.button.focus {
+  color: #00c2ff;
+}
+.func-intro{font-size:12px;color:#888;line-height:32px;margin-top: -10px;}
+
+.change-cover{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background-color: rgba(50, 50, 50, 0.5);
+    z-index: 290;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.btn-breath{ /*position:relative;*/ border:1px solid #2b92d4; border-radius:2px; color:#fff; /*font-size:20px;*/ text-align:center; cursor:pointer; box-shadow:0 1px 2px rgba(0,0,0,.3); overflow:hidden; /*background-image: -webkit-gradient(linear, left top, left bottom, from(#6cc3fe), to(#21a1d0));*/
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-name: breathe;
+    -webkit-animation-duration: 1000ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+}
+@-webkit-keyframes breathe {
+    0% { opacity: .2; box-shadow:0 1px 2px rgba(255,255,255,0.1);}
+    100% { opacity: 1; border:1px solid rgba(59,235,235,1); box-shadow:0 1px 30px rgba(59,255,255,1);}
+}
+
+.ximagebutton-label {
+  font-size:12px;
+}
+
+.navbar {
+  padding: 0 10px;
+  margin: 0 10px;  
+}
+.navbar > li {
+  padding: 0 5px;
+  margin: 0 10px;
+}
+.navbar > li.compact {
+  padding: 0 5px;
+}

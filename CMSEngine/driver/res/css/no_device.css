@@ -1,0 +1,7 @@
+.no-device {
+  display: flex;
+  justify-content: center;
+  line-height: 100vh;
+  font-size: 37px;
+  color: #5b5b5b;
+}

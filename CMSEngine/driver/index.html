@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="res/lib/alertifyjs/css/alertify.min.css">
+  <link rel="stylesheet" href="res/lib/alertifyjs/css/themes/default.min.css">
+  <link rel="stylesheet" href="res/lib/cmsui/css/cmsui.min.css">
+  <link rel="stylesheet" href="res/css/app.css">
+  <link rel="stylesheet" href="res/css/index.css">
+</head>
+<body style="background: url(res/skin/skin1.png) no-repeat">
+<div id="app" class="app">
+  <div id="header" class="header" data-controls=true>
+    <input id="header_logo" class="imagebutton" type="image" draggable="false" src="res/img/logo_1.png"></input>
+    <ul id="header_navbar" class="navbar header-navbar"></ul>
+    <div id="header_deviceselect" class="deviceselect">
+      <div class="deviceselect-wrapper">    
+        <input class="imagebutton deviceselect-left" style="display: none" type="image" draggable="false" src="res/img/devsel_left_1.png"></input>
+      </div>
+      <img class="deviceselect-device" style="display: none" draggable="false" src=""/>
+      <div class="deviceselect-wrapper">      
+        <input class="imagebutton deviceselect-right" style="display: none" type="image" draggable="false" src="res/img/devsel_right_1.png"></input>
+      </div>
+    </div>
+    <div class="header-controls">
+      <input id="header_sc_setting" class="imagebutton systemcontrols" type="image" draggable="false" src="res/img/setting_1.png"></input>
+      <input id="header_sc_skins" class="imagebutton systemcontrols" type="image" draggable="false" src="res/img/skins_1.png"></input>
+    </div>
+  </div>
+  <div id="model_window" class="model-window" style="display: none">
+    <div id="model_skins" class="skins"></div>
+    <div id="model_settings" class="settings">
+      <div class="settings-bottom">
+        <div class="settings-set">
+          <img src="res/img/setting_1.png" />
+          <span cms-lang="index_set"></span>
+        </div>
+        <div class="settings-close">
+          <img src="res/img/close_1.png" />
+        </div>
+      </div>
+      <div id="currentSoftVersion" cms-lang="index_version"><span></span></div>
+      <button type="button" class="btn client apply" id="soft_update" cms-lang="index_software_update"></button>
+      <div id="currentDeviceName" class="device-top" cms-lang="index_current_device"><span></span></div>
+      <button type="button" class="btn client apply" id="device_recover" cms-lang="index_restore_factory_defaults"></button>
+      <div class="language">
+        <div class="language-select" id="language_select">
+          <p id="currentLang">英语</p>
+          <ul>
+            <li data-value="en" class="selected-check" cms-lang="index_english">英语</li>
+            <li data-value="ja" cms-lang="index_japanese">日语</li>
+            <li data-value="de" cms-lang="index_ger">德语</li>
+            <li data-value="fr" cms-lang="index_fr">法语</li>
+            <li data-value="es" cms-lang="index_es">西班牙语</li>
+            <li data-value="it" cms-lang="index_it">意大利语</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="model_software_update" class="pom-software-layer">
+      <div class="pom-software-header" cms-lang="index_software_update"></div>
+      <div class="pom-software-update-progress">
+        <div class="bar">     
+          <span class="bar-fill"></span>
+        </div>  
+      </div>
+      <div class="pom-software-footer">
+        <div class="pom-software-footer-status">
+          <span class="updatestatu" cms-lang="index_normal"></span>
+          <span class="pom-software-f-s">0%</span>
+        </div>   
+        <div class="pom-software-update-info" style="display:none;" cms-lang="index_error_prompt">
+        </div> 
+        <div class="pom-software-confirm" style="display:none;" cms-lang="index_confirm">
+        </div> 
+      </div>
+      <div class="downloadspeed">
+        <span cms-lang="index_speed"></span>
+        <span>0kb/s</span>
+      </div> 
+    </div>
+  </div>
+  <iframe id="main" class="main" src="no_device.html"></iframe>
+</div>
+<script src="res/lib/jquery/jquery.min.js"></script>
+<script src="res/lib/alertifyjs/alertify.min.js"></script>
+<script src="res/lib/cmsui/js/cmsui.min.js"></script>
+<script src="res/js/cms.js"></script>
+<script src="res/js/app.js"></script>
+<script type="text/javascript" src="res/js/common.js"></script>
+</body>
+</html>

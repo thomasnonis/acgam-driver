@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="res/lib/minicolors/jquery.minicolors.css">
+    <link rel="stylesheet" href="res/lib/cmsui/css/cmsui.min.css">
+    <link rel="stylesheet" href="res/css/app.css">
+    <link rel="stylesheet" href="res/css/kb_offline.css">
+</head>
+  <body>
+    <div id="profilelist" class="profilelist"></div>
+    <div class="ol_content">
+      <div class="ol_left">
+        <ul class="tab-list ol_left_menu" id="menu_select">
+          <li class="active" cms-lang="kb_assigning_functions"></li>
+          <li cms-lang="kb_lamp_efficacy"></li>
+        </ul>
+        <!-- 功能设定 -->
+        <div class="ol_func" id="func_setting">
+          <div class="button-got" id="button-got">
+            <span></span>
+          </div> 
+
+          <div class="tools_1_func" id="tools_1">      
+            <div class="ximagebutton">
+                <input class="ximagebutton-image" type="image" draggable="false" src="res/img/keyboard_1.png"></input>
+                <label class="ximagebutton-label" cms-lang="kb_keyboard"></label>
+            </div>
+
+            <div class="ximagebutton">
+                <input class="ximagebutton-image" type="image" draggable="false" src="res/img/macro_1.png"></input>
+                <label class="ximagebutton-label" cms-lang="kb_macro"></label>
+            </div>
+
+            <div class="ximagebutton">
+                <input class="ximagebutton-image" type="image" draggable="false" src="res/img/light_1.png"></input>
+                <label class="ximagebutton-label" cms-lang="kb_lamp"></label>
+            </div>
+
+            <div class="ximagebutton">
+                <input class="ximagebutton-image" type="image" draggable="false" src="res/img/mouse_1.png"></input>
+                <label class="ximagebutton-label" cms-lang="kb_mouse"></label>
+            </div>
+            
+            <div class="ximagebutton">
+                <input class="ximagebutton-image" type="image" draggable="false" src="res/img/media_1.png"></input>
+                <label class="ximagebutton-label" cms-lang="kb_media"></label>
+            </div>
+            
+            <div class="ximagebutton">
+                <input class="ximagebutton-image" type="image" draggable="false" src="res/img/hotkey_1.png"></input>
+                <label class="ximagebutton-label" cms-lang="kb_hotkey"></label>
+            </div>
+            
+            <div class="ximagebutton">
+                <input class="ximagebutton-image" type="image" draggable="false" src="res/img/disable_1.png"></input>
+                <label class="ximagebutton-label" cms-lang="kb_disable"></label>
+            </div>
+          </div>
+          <div class="tools_2" id="tools_2">      
+            <div class="functions singlebutton" id="tool_singlebutton" data-menu-p-name="singlebutton" style="display:block;">
+              <div class="func-setting">
+                <p class="title" cms-lang="kb_keyboard_functions"></p>
+                <p class="func-intro" cms-lang="kb_select_button_set_functions"></p>
+                <div class="now-button" id="now_button">
+                    <input type="text" class="now-button-input" id="com_key"/>
+                </div>
+                <button class="btn button btn-remove" id="remove_singlebutton" cms-lang="kb_clear"></button>
+              </div>
+
+              <div class="confirm">
+                <div class="yes">
+                  <input class="imagebutton" type="image"  draggable="false" src="res/img/confirm_1.png"></input>
+                </div>
+              </div>
+            </div>
+
+            <div class="functions macro" id="tool_macro" data-menu-p-name="macro">
+              <div class="func-setting">
+                <p class="title" id="macro_menu"><span cms-lang="kb_macro_list"></span></p>
+                <div class="menu-list">
+                <ul>
+                </ul>
+                </div>
+                <p class="title" cms-lang="kb_playing_mode"></p>
+                <div class="func-items" id="now_macro_type">
+                  <div class="func-item active">
+                    <img src="res/img/original_point_3.png">
+                    <p><span cms-lang="kb_perform"></span><input type="text" class="macro-play-time" value="1" id="repeats" onkeypress="if (event.keyCode < 48 || event.keyCode > 57) event.returnValue = false;"/><span cms-lang="kb_end_auto_stop"></span></p>
+                  </div>
+                  <div class="func-item">
+                    <img src="res/img/original_point_1.png">
+                    <p cms-lang="kb_macro_key_stop"></p>
+                  </div>
+                  <div class="func-item">
+                    <img src="res/img/original_point_1.png">
+                    <p cms-lang="kb_macro_key_to_stop"></p>
+                  </div>          
+                </div>
+              </div>
+
+              <div class="confirm">
+                <div class="yes">
+                  <input class="imagebutton" type="image"  draggable="false" src="res/img/confirm_1.png"></input>
+                </div>
+              </div>
+            </div>
+
+            <div class="functions light" id="tool_light" data-menu-p-name="light">
+              <div class="func-setting">
+                <p class="title" cms-lang="kb_light_list"></p>
+                <div class="menu-list" style="height: 450px;">
+                <ul>
+                </ul> 
+                </div>
+              </div>
+
+              <div class="confirm">
+                <div class="yes">
+                  <input class="imagebutton" type="image"  draggable="false" src="res/img/confirm_1.png"></input>
+                </div>
+              </div>
+            </div>
+
+            <div class="functions mouse" id="tool_mouse" data-menu-p-name="mouse">
+              <div class="func-setting">
+                <p class="title" cms-lang="kb_mouse_function"></p>
+                <div class="func-items">
+                  <div class="func-item" DriverValue="0x01010001" MenuName="LeftClick">
+                    <img src="res/img/original_point_1.png">
+                    <p cms-lang="kb_left_click"></p>
+                  </div>
+
+                  <div class="func-item" DriverValue="0x01010002" MenuName="RightClick">
+                    <img src="res/img/original_point_1.png">
+                    <p cms-lang="kb_right_click"></p>
+                  </div>
+
+                  <div class="func-item" DriverValue="0x01010004" MenuName="MiddleClick">
+                    <img src="res/img/original_point_1.png">
+                    <p cms-lang="kb_middle_click"></p>
+                  </div>
+
+                  <div class="func-item" DriverValue="0x01010008" MenuName="Back">
+                    <img src="res/img/original_point_1.png">
+                    <p cms-lang="kb_back_off"></p>
+                  </div>
+
+                  <div class="func-item" DriverValue="0x01010010" MenuName="Forward">
+                    <img src="res/img/original_point_1.png">
+                    <p cms-lang="kb_advance"</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="confirm">
+                <div class="yes">
+                  <input class="imagebutton" type="image"  draggable="false" src="res/img/confirm_1.png"></input>
+                </div>
+              </div>
+            </div>
+
+            <div class="functions media" id="tool_media" data-menu-p-name="media">
+              <div class="func-setting">
+                <p class="title" cms-lang="kb_media_command"></p>
+                <div class="func-items">
+                  <div class="func-item" DriverValue="0x03000183" MenuName="MediaPlayer">
+                    <img src="res/img/original_point_1.png">
+                    <p cms-lang="kb_media_player"></p>
+                  </div>
+                  
+                  <div class="func-item" DriverValue="0x030000CD" MenuName="PlayPause">
+                    <img src="res/img/original_point_1.png">
+                    <p cms-lang="kb_play_pause"></p>
+                  </div>
+
+                  <div class="func-item" DriverValue="0x030000B7" MenuName="Stop">
+                    <img src="res/img/original_point_1.png">
+                    <p cms-lang="kb_stop"></p>
+                  </div>
+
+                  <div class="func-item" DriverValue="0x030000B6" MenuName="PreTrack">
+                    <img src="res/img/original_point_1.png">
+                    <p cms-lang="kb_prev_song"></p>
+                  </div>
+
+                  <div class="func-item" DriverValue="0x030000B5" MenuName="NextTrack">
+                    <img src="res/img/original_point_1.png">
+                    <p cms-lang="kb_next_song"></p>
+                  </div>
+
+                  <div class="func-item" DriverValue="0x030000E9" MenuName="VolumeUp">
+                    <img src="res/img/original_point_1.png">
+                    <p cms-lang="kb_plus_volume"></p>
+                  </div>
+                  
+                  <div class="func-item" DriverValue="0x030000EA" MenuName="VolumeDown">
+                    <img src="res/img/original_point_1.png">
+                    <p cms-lang="kb_reduce_volume"></p>
+                  </div>
+                  
+                  <div class="func-item" DriverValue="0x030000E2" MenuName="Mute">
+                    <img src="res/img/original_point_1.png">
+                    <p cms-lang="kb_mute"></p>
+                  </div>
+                </div>  
+              </div>  
+
+              <div class="confirm">
+                <div class="yes">
+                  <input class="imagebutton" type="image"  draggable="false" src="res/img/confirm_1.png"></input>
+                </div>
+              </div>    
+            </div>
+
+            <div class="functions hotbutton" id="tool_hotbutton" data-menu-p-name="hotbutton">
+              <div class="func-setting">
+                <p class="title" cms-lang="kb_hotkey"></p>
+                <div class="func-items">
+                  <div class="func-item" DriverValue="0x03000224" MenuName="BrowserBack">
+                    <img src="res/img/original_point_1.png">
+                    <p cms-lang="kb_brower_back"></p>
+                  </div>
+                  <div class="func-item" DriverValue="0x03000225" MenuName="BrowserForward">
+                    <img src="res/img/original_point_1.png">
+                    <p cms-lang="kb_brower_advance"></p>
+                  </div>
+                  <div class="func-item" DriverValue="0x03000227" MenuName="BrowserReload">
+                    <img src="res/img/original_point_1.png">
+                    <p cms-lang="kb_brower_refresh"></p>
+                  </div>
+                  <div class="func-item" DriverValue="0x0300022A" MenuName="BrowserFavorite">
+                    <img src="res/img/original_point_1.png">
+                    <p cms-lang="kb_brower_collection"></p>
+                  </div>
+                  <div class="func-item" DriverValue="0x03000223" MenuName="BrowserHome">
+                    <img src="res/img/original_point_1.png">
+                    <p cms-lang="kb_brower_home"></p>
+                  </div>
+                  <div class="func-item" DriverValue="0x0300018A" MenuName="Email">
+                    <img src="res/img/original_point_1.png">
+                    <p cms-lang="kb_email"></p>
+                  </div>
+                  <div class="func-item" DriverValue="0x03000194" MenuName="MyComputer">
+                    <img src="res/img/original_point_1.png">
+                    <p cms-lang="kb_my_computer"></p>
+                  </div>
+                  <div class="func-item" DriverValue="0x03000192" MenuName="Caculate">
+                    <img src="res/img/original_point_1.png">
+                    <p cms-lang="kb_calculator"></p>
+                  </div>
+                  <div class="func-item" DriverValue="0x02000601" MenuName="Copy">
+                    <img src="res/img/original_point_1.png">
+                    <p cms-lang="kb_copy"></p>
+                  </div>
+                  <div class="func-item" DriverValue="0x02001901" MenuName="Paste">
+                    <img src="res/img/original_point_1.png">
+                    <p cms-lang="kb_paste"></p>
+                  </div>
+                  <div class="func-item" DriverValue="0x02004600" MenuName="PrtScrn">
+                    <img src="res/img/original_point_1.png">
+                    <p cms-lang="kb_screenshot"></p>
+                  </div>
+                </div>
+              </div>
+              <div class="confirm">
+                <div class="yes" pic="confirm" id="tools_confirm">
+                  <input class="imagebutton" type="image"  draggable="false" src="res/img/confirm_1.png"></input>
+                </div>
+              </div>
+            </div>
+
+            <div class="functions forbidden" id="tool_forbidden" data-menu-p-name="forbidden">
+              <div class="func-setting">
+                <p class="title" cms-lang="kb_current_key"></p>
+                <div class="func-forbidden" id="current_key_name"></div>
+              </div>
+              <div class="confirm">
+                <div class="yes">
+                  <input class="imagebutton" type="image"  draggable="false" src="res/img/confirm_1.png"></input>
+                </div>
+              </div>
+            </div>         
+
+			<div class="change-cover"></div>
+		  </div>
+        </div>
+        <div class="ol_func" id="lamp_setting" style="display:none;">
+          <div class="tools_1_le" id="tools_lamp_1">      
+            <div class="ximagebutton">
+                <input class="ximagebutton-image" type="image" draggable="false" src="res/img/lampbase_1.png"></input>
+                <label class="ximagebutton-label" cms-lang="kb_lamp_efficacy"></label>
+            </div>
+          </div>
+          <div class="tools_2" id="tools_lamp_2">      
+            <div class="functions lamp" id="tool_lamp" data-menu-p-name="lamp" style="display:block;">
+              <div class="func-static-lelist">
+                <p class="title" cms-lang="kb_static_light"></p>
+                <div class="static-lelist">
+                  <ul>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="func-setting" style="height: 370px;">
+                <p class="title" cms-lang="kb_light_list"></p>
+                <div class="menu-list" style="height: 370px;">
+                <ul>
+                </ul>
+                </div>
+              </div>
+              <div class="confirm">
+                <div class="yes">
+                  <input class="imagebutton" type="image"  draggable="false" src="res/img/confirm_1.png"></input>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ol_right">
+        <div id="device" class="device" data-width="910px">
+        </div> 
+        <div class="bottom-navs" id="bottom_nav" style="display:none;">   
+          <div class="color-picker">
+            <input type="text" id="picker" class="picker" data-inline="true" value="#4fc8db">
+            <div class="color-selected">
+              <p cms-lang="kb_current_color"></p>
+              <div class="current-color" id="current_color"></div>
+            </div>
+          </div>
+          <div class="colors">
+            <p class="title" cms-lang="kb_classic"></p>
+            <div class="items" id="choose_color">
+              <div class="item red"></div>
+              <div class="item orange"></div>
+              <div class="item yellow"></div>
+              <div class="item green"></div>
+              <div class="item white"></div>
+              <div class="item cyan" ></div>
+              <div class="item blue"></div>
+              <div class="item purple"></div>
+              <div class="item pink"></div>
+              <div class="item black"></div>
+              <div class="item redo"></div>
+              <div class="item orangeo"></div>
+              <div class="item yellowo"></div>
+              <div class="item greeno"></div>
+              <div class="item whiteo"></div>
+              <div class="item cyano"></div>
+              <div class="item blueo"></div>
+              <div class="item purpleo"></div>
+              <div class="item pinko"></div>
+              <div class="item blacko"></div>
+              <div class="item redt"></div>
+              <div class="item oranget"></div>
+              <div class="item yellowt"></div>
+              <div class="item greent"></div>
+            </div>
+          </div>
+          <div class="le-configs" id="le_configs">
+            <div class="le-config">
+              <div class="le-config-color" id="le_config_color_select">
+                <p class="le-config-color-select" cms-lang="color_param_set"></p>
+                <div class="le-config-color-dropdown" id="le_color_dropdown"></div>
+              </div>
+
+              <div class="le-config-type-items" id="le_config_colors">
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+              </div>
+            </div> 
+            <div class="le-config-set" id="le_config_set">
+              <div class="le-config-set-color"><span id="le_config_set_color"></span></div>
+            </div> 
+          </div>  
+        </div>
+        <button id="apply" class="btn button btn-apply" cms-lang="kb_application"></button>
+      </div>  
+    </div>
+    <script type="text/javascript" src="res/lib/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="res/lib/minicolors/jquery.minicolors.js"></script>
+    <script type="text/javascript" src="res/lib/jquery.color-2.1.2.js"></script>
+    <script type="text/javascript" src="res/lib/cmsui/js/cmsui.min.js"></script>
+    <script type="text/javascript" src="res/js/kb_offline.js"></script>
+    <script type="text/javascript" src="res/js/common.js"></script>
+  </body>
+</html>

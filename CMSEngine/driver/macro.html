@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="res/css/app.css">
+    <link rel="stylesheet" href="res/lib/cmsui/css/cmsui.min.css">
+    <link rel="stylesheet" href="res/css/macro.css">
+
+  </head>
+  <body>
+    <div class="macro-area">
+      <div class="macro-name">
+        <p cms-lang="macro_name"></p>
+        <input class="current-macro" id="current_macro_name" type="text" />
+      </div>
+    <ul class="macro-delay" id="macro_delay">
+        <li class="delay-model" id="record-delay">
+          <span class="circle selected"></span>
+          <span cms-lang="macro_recording_delay"></span>
+        </li>
+            <li class="delay-model" id="no-delay">
+              <span class="circle"></span>
+              <span cms-lang="macro_minimum_delay"></span>
+            </li>
+            <li class="delay-model" id="default-delay">
+              <span class="circle"></span>
+              <input type="text" value="1000" id="default-delay-time" onkeypress="if (event.keyCode < 48 || event.keyCode > 57) event.returnValue = false;"/>
+              <span cms-lang="macro_delay"></span>
+            </li>
+      </ul>
+      <div class="macro-functions">
+        <ul class="macro-function" id="macro_function">
+          <li class="ximagebutton" id="startRecordMacro">
+            <input class="ximagebutton-image" type="image" draggable="false" src="res/img/record_1.png"></input>
+            <label class="ximagebutton-label" cms-lang="macro_recording"></label>
+          </li>
+          <li class="ximagebutton" id="stopRecordMacro" style="display:none;">
+            <input class="ximagebutton-image" type="image" draggable="false" src="res/img/stop_1.png"></input>
+            <label class="ximagebutton-label" cms-lang="macro_stop"></label>
+          </li>
+          <li class="ximagebutton">
+            <input class="ximagebutton-image" type="image" draggable="false" src="res/img/edit_1.png"></input>
+            <label class="ximagebutton-label" cms-lang="macro_edit"></label>
+          </li>
+          <li class="ximagebutton">
+            <input class="ximagebutton-image" type="image" draggable="false" src="res/img/delete_1.png"></input>
+            <label class="ximagebutton-label" cms-lang="macro_delete"></label>
+          </li>
+          <li class="ximagebutton">
+            <input class="ximagebutton-image" type="image" draggable="false" src="res/img/move_up_1.png"></input>
+            <label class="ximagebutton-label" cms-lang="macro_up"></label>
+          </li>
+          <li class="ximagebutton">
+            <input class="ximagebutton-image" type="image" draggable="false" src="res/img/move_down_1.png"></input>
+            <label class="ximagebutton-label" cms-lang="macro_down"></label>
+          </li>
+          <li class="ximagebutton" id="insert_show">
+            <input class="ximagebutton-image" type="image" draggable="false" src="res/img/insert_1.png"></input>
+            <label class="ximagebutton-label" cms-lang="macro_insert"></label>
+          </li>
+        </ul>  
+        <ul class="macro-content" id="macro_show">
+          
+      </ul>
+      </div>
+    </div>
+    <div class="macro-menu">
+      <div class="macro-funcs">
+        <div class="macro-menu-title" id="macro_menu_title">
+          <span class="active" cms-lang="macro_list"></span>
+        </div>
+        <ul class="macro-menu-func" id="macro_menu_func">
+          <li>
+            <input class="imagebutton" type="image" draggable="false" src="res/img/macro_new_1.png"></input>      
+          </li>
+          <li>
+            <input class="imagebutton" type="image" draggable="false" src="res/img/macro_delete_1.png"></input>        
+          </li>
+        </ul>
+      </div>    
+      <ul class="macro-items" id="macro_items">
+        
+      </ul>
+    </div>
+    <div class="macro-div" id="macro_div"></div>
+    <div class="macro-change" id="macro_change">
+      <div class="macro-change-top">
+        <div class="macro-left macro-span" cms-lang="macro_insert"></div>
+        <div class="macro-left macro-insert-select" id="macro_insert_select">
+          <div class="macro-left macro-insert-content" data-index="0" id="macro_insert_content" cms-lang="macro_before_this_delay"></div>
+          <div class="macro-right macro-insert-down"></div>
+        </div>
+        <div class="macro-select" id="macro_select_menu">
+          <div class="macro-select-item" cms-lang="macro_before_this_delay"></div>
+          <div class="macro-select-item" cms-lang="macro_after_this_delay"></div>
+          <div class="macro-select-item" cms-lang="macro_before_press_the_button"></div>
+          <div class="macro-select-item" cms-lang="macro_after_press_the_button"></div>
+        </div>
+      </div>
+      <div class="macro-change-content">
+          <div class="macro-select-1" id="macro_select_mode_1">
+            <div class="macro-left macro-span" cms-lang="macro_duration"></div>
+            <div class="macro-left ">    
+              <input type="text" id="macro_duration_text-1" name="text-1" class="macro-insert-input" onkeypress="if (event.keyCode < 48 || event.keyCode > 57) event.returnValue = false;" value="50">
+            </div>
+            <div class="macro-left macro-span">ms</div>
+          </div>
+        <div class="macro-select-2" id="macro_select_mode_2">
+          <div class="macro-select-2-item">
+            <div class="macro-left">
+              <input type="radio" name="delay" class="delay-model" value="0" />
+            </div>
+            <div class="macro-left macro-span-add" cms-lang="macro_record_the_delay"></div>
+          </div>
+          <div class="macro-select-2-item">
+            <div class="macro-left">
+              <input type="radio" name="delay" class="delay-model" value="2" checked="" />
+            </div>
+            <div class="macro-left macro-span-add" cms-lang="macro_default_delays"></div>
+            <div class="macro-left macro-span">
+              <input type="text" id="macro_duration_text-2" class="macro-insert-input" name="text-2" onkeypress="if (event.keyCode < 48 || event.keyCode > 57) event.returnValue = false;" value="1000"/>
+            </div>
+            <div class="macro-left macro-span">ms</div> 
+          </div>
+          <div class="macro-select-2-item">
+            <div class="macro-left">
+              <input type="radio" name="delay" class="delay-model" value="1">
+            </div>
+            <div class="macro-left macro-span-add" cms-lang="macro_min_delays"></div>
+            <div class="macro-left macro-span">5ms</div>
+          </div>
+        </div>
+      </div>
+      <div class="macro-change-bottom">
+          <div class="macro-right macro-choose" id="macro_cancel" cms-lang="macro_cancel"></div>
+          <div class="macro-right macro-choose" id="macro_choose" cms-lang="macro_insert"></div>
+      </div>
+      <div class="macro-change-record" id="macro_change_record">
+          <div class="macro-item-record" id="macro_item_record_start" attr-action="start" cms-lang="macro_recording"></div>
+          <div class="macro-item-record" id="macro_item_record_stop" attr-action="stop" style="display:none" cms-lang="macro_stop_recording"></div>
+      </div>
+    </div>
+    <div class="macro-change-cover"></div>
+    <script type="text/javascript" src="res/lib/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="res/lib/cmsui/js/cmsui.min.js"></script>
+    <script type="text/javascript" src="res/js/macro.js"></script>
+	<script type="text/javascript" src="res/js/common.js"></script>
+  </body>
+</html>

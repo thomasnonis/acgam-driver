@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+  <title>SEMITEK</title>
+  <link rel="stylesheet" href="res/css/app.css">
+  <link rel="stylesheet" href="res/lib/cmsui/css/cmsui.min.css"> 	
+  <link href="res/lib/colorpicker/colorpicker.css" rel="stylesheet">
+  <link href="res/css/le.css" rel="stylesheet">
+</head>
+<body>
+  <div class="main" id="main">
+    <div id="device" class="device" data-width="1000px" data-scale="0.75" style="float:left;">
+    </div>
+    <ul class="num-row" id="num_row" style="bottom:-40px;">
+      <li cms-lang="le_first_row"></li>
+      <li cms-lang="le_two_row"></li>
+      <li cms-lang="le_third_row"></li>
+      <li cms-lang="le_fourth_row"></li>
+      <li cms-lang="le_five_row"></li>
+      <li cms-lang="le_six_row"></li>
+      <li cms-lang="le_select"></li>
+      <li cms-lang="le_unselect_all"></li>
+    </ul>
+  </div>
+
+  <div id="custom_light" class="lamp-1">
+    <p class="text-p" cms-lang="le_custom_lamp_effect"></p>
+    <div id="lamp-con" class="lamp-con">
+      <div id="con-text"></div>
+      <div class="addcon">+</div>
+    </div>
+  </div>
+
+  <div id="animate" class="lamp-2" style="display:none">
+    <p class="text-p" cms-lang="le_animation"></p>
+    <div class="lamp-con lamp-two" id="lamp_frame">
+      <ul class="con-text con-text-li">
+        <li cms-lang="le_order"></li>
+        <li cms-lang="le_frame_number"></li>
+        <li cms-lang="le_name"></li>
+        <li cms-lang="le_delete"></li>
+      </ul>
+      <div id="con-frame" >
+        <div class="con-text con-frame">
+          <div class="con-text-key">
+            <span class="up-key"></span>
+            <span class="down-key"></span>
+          </div>
+          <div class="con-text-num">
+            <input type="text" value="1" />
+          </div>
+          <input class="con-text-name" type="text" value="灯效1" />
+          <span class="con-text-span con-text-buttom">-</span>
+        </div>
+      </div>
+      <div class="addcon">+</div>
+    </div>
+    <div class="lamp-two-buttom" id="frame_bottom">
+      <div class="lamp-setting lamp-two-buttom-back">
+        <span cms-lang="le_return"></span>
+      </div>
+      <div class="lamp-setting lamp-two-buttom-play">
+        <span class="play-bg" cms-lang="le_playblast"></span>
+        <span class="play-stop" style="display:none" cms-lang="le_stop_playing"></span>
+      </div>
+      <div id="detail" class="lamp-setting lamp-two-effect">
+        <span cms-lang="le_lamp_effect_designation"> ></span>         
+      </div>
+    </div>
+  </div>
+
+  <div id="light_setting" class="lamp-3" style="display:none">
+    <p class="text-p" cms-lang="le_lamp_effect_designation"></p>
+    <div class="lamp-con lamp-two" id="lightcolor_setting">
+        <ul class="con-text con-text-li-two">
+          <li class="con-text-color-li" lighttype="0" cms-lang="le_monochrome"></li>
+          <li class="con-text-color-li" lighttype="1" cms-lang="le_rgb">RGB</li>
+          <li class="con-text-color-li" lighttype="2" cms-lang="le_breathing"></li>
+        </ul>
+        <div id="con-color">
+        <div class="con-color">
+          <div class="con-text-three-num">
+              <input type="text" value="1" />
+          </div>
+          <div class="con-defult">
+              <span class="defult-color"></span>
+          </div>
+          <p class="con-text-color-name" cms-lang="le_monochrome1"></p>     
+          <span class="con-text-span con-text-buttom">-</span>
+        </div>
+        </div>
+    </div>
+    <div class="con-text-color-pickholder" id="color_select" style="display:none;">
+      <div id="colorpickerHolder"></div>
+      <div >
+        <div class="con-text-save" cms-lang="le_preservation"></div>
+        <div class="con-text-cancel" cms-lang="le_cancel"></div>
+      </div>
+    </div>
+    <div class="con-text-breath" id="breath_frame_setting">
+      <div class="con-text-breath-frame">
+        <label for="frame_count" class="con-text-label" cms-lang="le_breathing_change_frames"></label>  
+        <input type="text" class="con-text-frame-setting" value="" id="frame_count" />  
+      </div> 
+      <div class="con-text-breath-frame">
+        <label for="frame_count" class="con-text-label" cms-lang="le_breathing_for_frames"></label>  
+        <input type="text" class="con-text-frame-setting" value="" id="stay_count" />  
+      </div> 
+      <div class="con-text-breath-bottom">
+        <div class="con-text-breath-submit" cms-lang="le_ok"></div>
+        <div class="con-text-breath-cancel" cms-lang="le_cancel"></div>
+      </div>
+    </div>
+    <div class="lamp-two-buttom" id="light_setting_bottom" >
+      <div class="lamp-setting lamp-back">
+        <span cms-lang="le_return"></span>
+      </div>
+      <div class="lamp-setting lamp-play">
+        <span class="play-bg" cms-lang="le_playblast"></span>
+        <span class="play-stop" style="display:none" cms-lang="le_stop_playing"></span>
+      </div>
+      <div class="lamp-setting lamp-save" cms-lang="le_save_settings"></div>
+    </div>
+  </div>
+<script type="text/javascript" src="res/lib/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="res/lib/cmsui/js/cmsui.min.js"></script>
+<script type="text/javascript" src="res/lib/colorpicker/colorpicker.js"></script>
+<script type="text/javascript" src="res/js/le.js"></script>
+<script type="text/javascript" src="res/js/common.js"></script>
+</body>
+</html>
